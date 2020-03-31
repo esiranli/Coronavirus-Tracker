@@ -1,0 +1,121 @@
+{
+  "latest": {
+    "confirmed": 304524,
+    "deaths": 12973,
+    "recovered": 91499
+  },
+  "locations": [
+    {
+      "coordinates": {
+        "latitude": "15",
+        "longitude": "101"
+      },
+      "country": "Thailand",
+      "country_code": "TH",
+      "id": 0,
+      "last_updated": "2020-03-22T19:55:07.247499Z",
+      "latest": {
+        "confirmed": 411,
+        "deaths": 1,
+        "recovered": 42
+      },
+      "province": ""
+    },
+    {
+      "coordinates": {
+        "latitude": "36",
+        "longitude": "138"
+      },
+      "country": "Japan",
+      "country_code": "JP",
+      "id": 1,
+      "last_updated": "2020-03-22T19:55:07.252756Z",
+      "latest": {
+        "confirmed": 1007,
+        "deaths": 35,
+        "recovered": 232
+      },
+      "province": ""
+    },
+    {
+      "coordinates": {
+        "latitude": "1.2833",
+        "longitude": "103.8333"
+      },
+      "country": "Singapore",
+      "country_code": "SG",
+      "id": 2,
+      "last_updated": "2020-03-22T19:55:07.257604Z",
+      "latest": {
+        "confirmed": 432,
+        "deaths": 2,
+        "recovered": 140
+      },
+      "province": ""
+    },
+    {
+      "coordinates": {
+        "latitude": "28.1667",
+        "longitude": "84.25"
+      },
+      "country": "Nepal",
+      "country_code": "NP",
+      "id": 3,
+      "last_updated": "2020-03-22T19:55:07.262310Z",
+      "latest": {
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 1
+      },
+      "province": ""
+    },
+    {
+      "coordinates": {
+        "latitude": "2.5",
+        "longitude": "112.5"
+      },
+      "country": "Malaysia",
+      "country_code": "MY",
+      "id": 4,
+      "last_updated": "2020-03-22T19:55:07.266998Z",
+      "latest": {
+        "confirmed": 1183,
+        "deaths": 4,
+        "recovered": 114
+      },
+      "province": ""
+    },
+    {
+      "coordinates": {
+        "latitude": "49.2827",
+        "longitude": "-123.1207"
+      },
+      "country": "Canada",
+      "country_code": "CA",
+      "id": 5,
+      "last_updated": "2020-03-22T19:55:07.272194Z",
+      "latest": {
+        "confirmed": 424,
+        "deaths": 10,
+        "recovered": 4
+      },
+      "province": "British Columbia"
+    },
+    {
+      "coordinates": {
+        "latitude": "-33.8688",
+        "longitude": "151.2093"
+      },
+      "country": "Australia",
+      "country_code": "AU",
+      "id": 6,
+      "last_updated": "2020-03-22T19:55:07.276817Z",
+      "latest": {
+        "confirmed": 436,
+        "deaths": 6,
+        "recovered": 4
+      },
+      "province": "New South Wales"
+    }
+  ]
+}
