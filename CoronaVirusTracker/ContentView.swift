@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject
     private var countryStore: CountryStore
     
-    @State var isPresentingChart = false
+    @State private var isShowing = false
     
     var body: some View {
         NavigationView {
@@ -23,14 +23,10 @@ struct ContentView: View {
                         ImageViewContainer(imageURL: country.countryInfo.flag)
                     }
                 }
-//                Button(action: { self.isPresentingChart.toggle() }) {
-//                    CountryRow(data: country, imageContent: {
-//                        ImageViewContainer(imageURL: country.countryInfo.flag)
-//                    })
-//                }.sheet(isPresented: self.$isPresentingChart) {
-//                    CountryDetail(country: country)
-//                }
-            }.navigationBarTitle("Countries")
+            }.background(PullToRefresh(action: {
+                    self.countryStore.load(completion: { completed in self.isShowing = false })
+                }, isShowing: $isShowing))
+                .navigationBarTitle("Countries", displayMode: .inline)
         }
     }
 }

@@ -27,9 +27,24 @@ struct CountryDetail: View {
         self.timelineObserver = TimelineObserver(country: country.country)
     }
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    var backButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "arrow.left")
+                    .padding()
+                    .foregroundColor(.white)
+                .frame(width: 30, height: 30)
+            }.navigationBarHidden(true)
+        }
+    }
+    
     var body: some View {
         ZStack {
-            Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)).edgesIgnoringSafeArea(.all)
+//            getBackgroundColor().edgesIgnoringSafeArea(.all)
             VStack(alignment: .center, spacing: 8) {
                 Text(country.country)
                     .font(.system(size: 34))
@@ -54,6 +69,8 @@ struct CountryDetail: View {
                     .padding()
             }
         }
+//        .navigationBarTitle(Text(country.country)).foregroundColor(.white)
+        .navigationBarItems(leading: backButton)
     }
     
     func getBarData(pickerSelectedItem: Int) -> [BarData] {
@@ -61,6 +78,10 @@ struct CountryDetail: View {
             timelineObserver.historicalData!.cases.sorted(by: { $0.text < $1.text }) :
             timelineObserver.historicalData!.deaths.sorted(by: { $0.text < $1.text })
     }
+    
+//    func getBackgroundColor() -> Color {
+//        return pickerSelectedItem == 0 ? .gray : .red
+//    }
     
     func getSubtitle() -> String {
         let lastCase = timelineObserver.historicalData!.cases.sorted(by: { $0.text < $1.text }).last!
@@ -107,11 +128,13 @@ class TimelineObserver: ObservableObject {
 struct BarView: View {
     var data: BarData
     var maxValue: Int
+    var height: CGFloat = 300
+    var width: CGFloat = 4
     var body: some View {
         VStack(spacing: 10) {
-            ZStack(alignment: .bottom) {
-                Capsule().frame(width: 4, height: 300).foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
-                Capsule().frame(width: 4, height: CGFloat(data.value * 200 / maxValue))
+            ZStack(alignment: Alignment.bottom) {
+                Capsule().frame(width: width, height: height).foregroundColor(.secondary)
+                Capsule().frame(width: width, height: CGFloat(data.value) * height / CGFloat(maxValue))
                     .foregroundColor(.white)
             }
 //            Text(data.text)

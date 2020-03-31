@@ -31,7 +31,7 @@ final class CountryStore: ObservableObject {
         return countries.filter{ searchTerm.isEmpty ? true : $0.country.lowercased().contains(searchTerm.lowercased())}
     }
     
-    func load() {
+    func load(completion: ((Bool) -> ())? = nil) {
         let urlString = "https://corona.lmao.ninja/countries"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
@@ -41,9 +41,11 @@ final class CountryStore: ObservableObject {
                 let countries = try JSONDecoder().decode([Country].self, from: data)
                 DispatchQueue.main.async {
                     self.countries = countries
+                    completion?(true)
                 }
             } catch {
                 print("Decoding error", error)
+                completion?(false)
             }
         }.resume()
     }
