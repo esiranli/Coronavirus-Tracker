@@ -18,13 +18,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(countryStore.filteredCountries) { country in
-                Button(action: { self.isPresentingChart.toggle() }) {
-                    CountryRow(data: country, imageContent: {
+                NavigationLink(destination: CountryDetail(country: country)) {
+                    CountryRow(data: country) { () -> ImageViewContainer in
                         ImageViewContainer(imageURL: country.countryInfo.flag)
-                    })
-                }.sheet(isPresented: self.$isPresentingChart) {
-                    CountryDetail(country: country)
+                    }
                 }
+//                Button(action: { self.isPresentingChart.toggle() }) {
+//                    CountryRow(data: country, imageContent: {
+//                        ImageViewContainer(imageURL: country.countryInfo.flag)
+//                    })
+//                }.sheet(isPresented: self.$isPresentingChart) {
+//                    CountryDetail(country: country)
+//                }
             }.navigationBarTitle("Countries")
         }
     }
