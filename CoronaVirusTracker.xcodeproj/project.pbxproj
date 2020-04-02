@@ -20,6 +20,8 @@
 		C367EB592427A30400F3AD4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C367EB582427A30400F3AD4B /* Preview Assets.xcassets */; };
 		C367EB5C2427A30400F3AD4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C367EB5A2427A30400F3AD4B /* LaunchScreen.storyboard */; };
 		C3A005612433B443007ACCDC /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A005602433B443007ACCDC /* PullToRefresh.swift */; };
+		C3A00563243601C7007ACCDC /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A00562243601C7007ACCDC /* CountryList.swift */; };
+		C3A00565243604DC007ACCDC /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A00564243604DC007ACCDC /* WorldView.swift */; };
 		C3E99AD12429F5DB0096A1A8 /* ImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD02429F5DB0096A1A8 /* ImageViewContainer.swift */; };
 		C3E99AD3242A1CA50096A1A8 /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD2242A1CA50096A1A8 /* CountryDetail.swift */; };
 		C3E99AD5242A1DCE0096A1A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD4242A1DCE0096A1A8 /* MapView.swift */; };
@@ -42,6 +44,8 @@
 		C367EB5B2427A30400F3AD4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C367EB5D2427A30400F3AD4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A005602433B443007ACCDC /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		C3A00562243601C7007ACCDC /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		C3A00564243604DC007ACCDC /* WorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
 		C3E99AD02429F5DB0096A1A8 /* ImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewContainer.swift; sourceTree = "<group>"; };
 		C3E99AD2242A1CA50096A1A8 /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
 		C3E99AD4242A1DCE0096A1A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				C367EB4F2427A30100F3AD4B /* AppDelegate.swift */,
 				C367EB512427A30100F3AD4B /* SceneDelegate.swift */,
 				C367EB532427A30100F3AD4B /* ContentView.swift */,
+				C3A00564243604DC007ACCDC /* WorldView.swift */,
 				C367EB552427A30400F3AD4B /* Assets.xcassets */,
 				C367EB5A2427A30400F3AD4B /* LaunchScreen.storyboard */,
 				C367EB5D2427A30400F3AD4B /* Info.plist */,
@@ -112,6 +117,7 @@
 				C3E99AD4242A1DCE0096A1A8 /* MapView.swift */,
 				C3E99AD6242AA3610096A1A8 /* CountryStore.swift */,
 				C3A005602433B443007ACCDC /* PullToRefresh.swift */,
+				C3A00562243601C7007ACCDC /* CountryList.swift */,
 			);
 			path = CoronaVirusTracker;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 				C3E99AD3242A1CA50096A1A8 /* CountryDetail.swift in Sources */,
 				C3E99AD12429F5DB0096A1A8 /* ImageViewContainer.swift in Sources */,
 				C329EA062427F404009A6AFE /* Data.swift in Sources */,
+				C3A00565243604DC007ACCDC /* WorldView.swift in Sources */,
 				C3E99AD5242A1DCE0096A1A8 /* MapView.swift in Sources */,
 				C329EA0C24284D0B009A6AFE /* SearchBar.swift in Sources */,
 				C321950C24295496001D3A1B /* InfoView.swift in Sources */,
+				C3A00563243601C7007ACCDC /* CountryList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

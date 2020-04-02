@@ -18,6 +18,12 @@ var dateFormatter: DateFormatter {
     return dateFormatter
 }
 
+var displayDateFormatter: DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd.MM.yyyy hh:mm:ss"
+    return dateFormatter
+}
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
@@ -133,4 +139,24 @@ struct HistoricalData: Decodable {
 struct BarData: Decodable, Hashable {
     let text: Date
     let value: Int
+}
+
+struct WorldData: Decodable {
+    let cases, deaths, recovered, active, affectedCountries: Int
+    let updated: Date
+    
+    enum CodingKeys: CodingKey {
+        case cases, deaths, recovered, active, affectedCountries, updated
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        cases = try container.decode(Int.self, forKey: .cases)
+        deaths = try container.decode(Int.self, forKey: .deaths)
+        recovered = try container.decode(Int.self, forKey: .recovered)
+        active = try container.decode(Int.self, forKey: .active)
+        affectedCountries = try container.decode(Int.self, forKey: .affectedCountries)
+        let dateTime = try container.decode(Double.self, forKey: .updated)
+        updated = Date(timeIntervalSince1970: dateTime / 1000.0)
+    }
 }
