@@ -10,24 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject
-    private var countryStore: CountryStore
-    
-    @State private var isShowing = false
-    
     var body: some View {
-        NavigationView {
-            List(countryStore.filteredCountries) { country in
-                NavigationLink(destination: CountryDetail(country: country)) {
-                    CountryRow(data: country) { () -> ImageViewContainer in
-                        ImageViewContainer(imageURL: country.countryInfo.flag)
-                    }
-                }
-            }.background(PullToRefresh(action: {
-                    self.countryStore.load(completion: { completed in self.isShowing = false })
-                }, isShowing: $isShowing))
-                .navigationBarTitle("Countries", displayMode: .inline)
-        }
+        TabView {
+            WorldView().tabItem {
+                Image(systemName: "globe")
+                Text("World")
+            }.tag(0)
+//            .environmentObject(CountryStore())
+            
+            CountryList().tabItem {
+                Image(systemName: "map")
+                Text("Countries")
+            }.environmentObject(CountryStore())
+            .tag(1)
+        }.font(.headline)
     }
 }
 

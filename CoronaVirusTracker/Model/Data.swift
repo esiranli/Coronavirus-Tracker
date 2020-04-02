@@ -20,7 +20,7 @@ var dateFormatter: DateFormatter {
 
 var displayDateFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd.MM.yyyy hh:mm:ss"
+    dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
     return dateFormatter
 }
 
