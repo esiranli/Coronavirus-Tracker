@@ -29,7 +29,8 @@ struct CountryList: View {
                         CountryRow(data: country) { () -> ImageViewContainer in
                             ImageViewContainer(imageURL: country.countryInfo.flag)
                         }
-                    }
+                    }.isDetailLink(false)
+                    
                 }.background(PullToRefresh(action: {
                         self.countryStore.load(completion: { completed in
                             self.isShowing = false
