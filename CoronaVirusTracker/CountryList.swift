@@ -14,18 +14,29 @@ struct CountryList: View {
     
     @State private var isShowing = false
     
+    @State private var searchTerm = ""
+    
+    var filteredCountries: [Country] {
+        return countryStore.countries.filter{ searchTerm.isEmpty ? true : $0.country.lowercased().contains(searchTerm.lowercased())}
+    }
+    
     var body: some View {
         NavigationView {
-            List(countryStore.filteredCountries) { country in
-                NavigationLink(destination: CountryDetail(country: country)) {
-                    CountryRow(data: country) { () -> ImageViewContainer in
-                        ImageViewContainer(imageURL: country.countryInfo.flag)
+            VStack {
+                SearchBar(query: $searchTerm, placeholder: "Search")
+                List(filteredCountries) { country in
+                    NavigationLink(destination: CountryDetail(country: country)) {
+                        CountryRow(data: country) { () -> ImageViewContainer in
+                            ImageViewContainer(imageURL: country.countryInfo.flag)
+                        }
                     }
-                }
-            }.background(PullToRefresh(action: {
-                    self.countryStore.load(completion: { completed in self.isShowing = false })
-                }, isShowing: $isShowing))
-                .navigationBarTitle("Countries", displayMode: .inline)
+                }.background(PullToRefresh(action: {
+                        self.countryStore.load(completion: { completed in
+                            self.isShowing = false
+                        })
+                    }, isShowing: $isShowing))
+                    .navigationBarTitle("Countries", displayMode: .inline)
+            }
         }
     }
 }

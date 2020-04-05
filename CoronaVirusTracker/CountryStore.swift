@@ -17,9 +17,6 @@ final class CountryStore: ObservableObject {
     @Published
     var timeline: TimelineData!
     
-    @State
-    private var searchTerm = ""
-    
     @State var dataPoints: [[BarData]] = []
     @State var countryName = ""
 
@@ -27,9 +24,8 @@ final class CountryStore: ObservableObject {
         load()
     }
     
-    var filteredCountries: [Country] {
-        return countries.filter{ searchTerm.isEmpty ? true : $0.country.lowercased().contains(searchTerm.lowercased())}
-    }
+
+    
     
     func load(completion: ((Bool) -> ())? = nil) {
         let urlString = "https://corona.lmao.ninja/countries"
