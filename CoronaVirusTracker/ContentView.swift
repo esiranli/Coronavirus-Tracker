@@ -23,6 +23,12 @@ struct ContentView: View {
                 Text("Countries")
             }.environmentObject(CountryStore())
             .tag(1)
+            
+            NewsView().tabItem {
+                Image(systemName: "doc.richtext")
+                Text("News")
+            }
+            .tag(2)
         }.font(.headline)
     }
 }

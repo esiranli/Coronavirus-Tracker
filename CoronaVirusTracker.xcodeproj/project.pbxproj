@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3017DD1244A0C890080975C /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017DD0244A0C890080975C /* SafariView.swift */; };
 		C321950A24293E5F001D3A1B /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = C321950924293E5F001D3A1B /* countries.json */; };
 		C321950C24295496001D3A1B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C321950B24295496001D3A1B /* InfoView.swift */; };
 		C329EA032427F3A3009A6AFE /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = C329EA022427F3A3009A6AFE /* locations.json */; };
@@ -22,6 +23,8 @@
 		C3A005612433B443007ACCDC /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A005602433B443007ACCDC /* PullToRefresh.swift */; };
 		C3A00563243601C7007ACCDC /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A00562243601C7007ACCDC /* CountryList.swift */; };
 		C3A00565243604DC007ACCDC /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A00564243604DC007ACCDC /* WorldView.swift */; };
+		C3A0056A243FA1E5007ACCDC /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = C3A00569243FA1E5007ACCDC /* FeedKit */; };
+		C3A0056C243FA3BC007ACCDC /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A0056B243FA3BC007ACCDC /* NewsView.swift */; };
 		C3E99AD12429F5DB0096A1A8 /* ImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD02429F5DB0096A1A8 /* ImageViewContainer.swift */; };
 		C3E99AD3242A1CA50096A1A8 /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD2242A1CA50096A1A8 /* CountryDetail.swift */; };
 		C3E99AD5242A1DCE0096A1A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E99AD4242A1DCE0096A1A8 /* MapView.swift */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C3017DD0244A0C890080975C /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		C321950924293E5F001D3A1B /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		C321950B24295496001D3A1B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		C329EA022427F3A3009A6AFE /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 		C3A005602433B443007ACCDC /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		C3A00562243601C7007ACCDC /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		C3A00564243604DC007ACCDC /* WorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
+		C3A0056B243FA3BC007ACCDC /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		C3E99AD02429F5DB0096A1A8 /* ImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewContainer.swift; sourceTree = "<group>"; };
 		C3E99AD2242A1CA50096A1A8 /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
 		C3E99AD4242A1DCE0096A1A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A0056A243FA1E5007ACCDC /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,8 @@
 				C3E99AD6242AA3610096A1A8 /* CountryStore.swift */,
 				C3A005602433B443007ACCDC /* PullToRefresh.swift */,
 				C3A00562243601C7007ACCDC /* CountryList.swift */,
+				C3A0056B243FA3BC007ACCDC /* NewsView.swift */,
+				C3017DD0244A0C890080975C /* SafariView.swift */,
 			);
 			path = CoronaVirusTracker;
 			sourceTree = "<group>";
@@ -146,6 +154,9 @@
 			dependencies = (
 			);
 			name = CoronaVirusTracker;
+			packageProductDependencies = (
+				C3A00569243FA1E5007ACCDC /* FeedKit */,
+			);
 			productName = CoronaVirusTracker;
 			productReference = C367EB4C2427A30100F3AD4B /* CoronaVirusTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +185,9 @@
 				Base,
 			);
 			mainGroup = C367EB432427A30100F3AD4B;
+			packageReferences = (
+				C3A00568243FA1E5007ACCDC /* XCRemoteSwiftPackageReference "FeedKit" */,
+			);
 			productRefGroup = C367EB4D2427A30100F3AD4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,6 +220,7 @@
 				C367EB502427A30100F3AD4B /* AppDelegate.swift in Sources */,
 				C367EB522427A30100F3AD4B /* SceneDelegate.swift in Sources */,
 				C3A005612433B443007ACCDC /* PullToRefresh.swift in Sources */,
+				C3A0056C243FA3BC007ACCDC /* NewsView.swift in Sources */,
 				C329EA082427F517009A6AFE /* CountryRow.swift in Sources */,
 				C367EB542427A30100F3AD4B /* ContentView.swift in Sources */,
 				C3E99AD7242AA3610096A1A8 /* CountryStore.swift in Sources */,
@@ -213,6 +228,7 @@
 				C3E99AD12429F5DB0096A1A8 /* ImageViewContainer.swift in Sources */,
 				C329EA062427F404009A6AFE /* Data.swift in Sources */,
 				C3A00565243604DC007ACCDC /* WorldView.swift in Sources */,
+				C3017DD1244A0C890080975C /* SafariView.swift in Sources */,
 				C3E99AD5242A1DCE0096A1A8 /* MapView.swift in Sources */,
 				C329EA0C24284D0B009A6AFE /* SearchBar.swift in Sources */,
 				C321950C24295496001D3A1B /* InfoView.swift in Sources */,
@@ -410,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3A00568243FA1E5007ACCDC /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3A00569243FA1E5007ACCDC /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3A00568243FA1E5007ACCDC /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C367EB442427A30100F3AD4B /* Project object */;
 }

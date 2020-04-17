@@ -16,6 +16,8 @@ struct CountryList: View {
     
     @State private var searchTerm = ""
     
+    @State var selectedTab = 0
+    
     var filteredCountries: [Country] {
         return countryStore.countries.filter{ searchTerm.isEmpty ? true : $0.country.lowercased().contains(searchTerm.lowercased())}
     }
@@ -36,7 +38,7 @@ struct CountryList: View {
                             self.isShowing = false
                         })
                     }, isShowing: $isShowing))
-                    .navigationBarTitle("Countries", displayMode: .inline)
+                .navigationBarTitle("Countries", displayMode: .inline)
             }
         }
     }

@@ -65,7 +65,7 @@ class WorldViewModel: ObservableObject {
     }
     
     func loadWorldData() {
-        let urlString = "https://corona.lmao.ninja/all"
+        let urlString = "https://corona.lmao.ninja/v2/all"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             guard let data = data else { return }
